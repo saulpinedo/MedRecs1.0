@@ -26,7 +26,7 @@
 
         <p>
             <strong>Fecha de Nacimiento</strong>
-            <%= patient.birth_date.strftime("%d/%m/%Y") %>
+            <%= @patients.birth_date.strftime("%d/%m/%Y") %>
         </p>
 
         <%= link_to 'Volver a Pacientes', patients_path %>
