@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag "application" %>
+
+<h1>Lista de Diagnósticos Médicos</h1>
+
+<p>La siguiente es una lista de diagnosticos medicos previamente agregadas por los doctores.</p>
+<p>Por favor sea bastante claro en la lista de diagnosticos para los demas usuarios.</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Diagnóstico Clínico</th>
+            <th>Descripcion</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <% @diagnoses.each do |diagnosis| %>
+            <tr>
+                <td><%= diagnosis.diagnosis %></td>
+                <td><%= diagnosis.description%></td>
+                <td><%= link_to 'Eliminar Diagnostico', diagnosis, method: :delete, data: { confirm: 'Esta Seguro de eliminar el Diagnóstico? Perdera la información previamente ingresada.' } %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<br/>
+<%= link_to 'Nuevo Diagnostico', new_diagnosis_path %>
+<br/>
+<br/>
+<%= link_to 'Volver', static_pages_path %>

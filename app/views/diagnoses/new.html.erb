@@ -1,0 +1,15 @@
+<%= form_for(@diagnoses) do |f| %>
+
+    <p>
+        <strong>Diagnostico</strong><br/>
+        <%= f.text_field :diagnosis %>
+    </p>
+
+    <p>
+        <strong>Direccion</strong><br/>
+        <%= f.text_area :description, size: "60x20" %>
+    </p>
+
+    <%= f.submit "Agregar Diagnóstico a la lista" %>
+
+<% end %>

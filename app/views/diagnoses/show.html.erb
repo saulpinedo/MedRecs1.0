@@ -1,0 +1,17 @@
+<h1> Diagnostico Ingresado </h1>
+        <p>
+            <strong>Id del Diagnostico </strong>
+            <%= @diagnoses.id %>
+        </p>
+
+        <p>
+            <strong>Diagnóstico Médico</strong>
+            <%= @diagnoses.diagnosis %>
+        </p>
+    
+        <p>
+            <strong>Descripción del diagnóstico</strong>
+            <%= @diagnoses.description %>
+        </p>
+
+        <%= link_to 'Volver a lista de diagnósticos', diagnoses_path %>

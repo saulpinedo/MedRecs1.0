@@ -1,0 +1,20 @@
+<%= form_for(@doctors) do |f| %>
+
+    <p>
+        <strong>Nombre</strong><br/>
+        <%= f.text_field :name %>
+    </p>
+
+    <p>
+        <strong>Especialidad</strong><br/>
+        <%= f.text_field :specialty %>
+    </p>
+
+    <p>
+        <strong>Codigo del Colegio de Medicos de Venezuela</strong><br/>
+        <%= f.text_field :cmdv %>
+    </p>
+
+    <%= f.submit "Agregar Doctor al registro" %>
+
+<% end %>

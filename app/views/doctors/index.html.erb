@@ -1,0 +1,31 @@
+<%= stylesheet_link_tag "application" %>
+
+<h1>Doctores en Línea</h1>
+
+<p>A continuación se le presenta una lista de doctores registrados en sistema</p>
+<p>En caso de no ver su nombre disponible por favor solicite registrarse o hagalo ud mismo por la opcion Agregar Doctor</p>
+
+<table>
+    <thead>
+        <tr>
+            <th>Nombre del Doctor</th>
+            <th>Especialidad</th>
+            <th>Codigo del Colegio de Medicos de Venezuela</th>
+        </tr>
+    </thead> 
+    <tbody>
+        <% @doctors.each do |doctor| %>
+            <tr>
+                <td><%= doctor.name %></td>
+                <td><%= doctor.specialty%></td>
+                <td><center><%= doctor.cmdv%></center></td>
+                <td><%= link_to 'Eliminar Doctor Registrado', doctor, method: :delete, data: { confirm: 'Esta Seguro de eliminar el registro del doctor? Perdera la información previamente ingresada.' } %></td>
+            </tr>
+        <% end %>
+    </tbody>
+</table>
+<br/>
+<%= link_to 'Agregar Doctor', new_doctor_path %>
+<br/>
+<br/>
+<%= link_to 'Volver', static_pages_path %>
