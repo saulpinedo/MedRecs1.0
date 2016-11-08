@@ -5,6 +5,7 @@
 <table border="1" border-style="solid">
 	<thead>
 		<tr>
+            <th>Id. del Paciente</th>
 			<th>Primer Nombre</th>
 			<th>Segundo Nombre</th>
 			<th>Apellidos</th>
@@ -16,12 +17,17 @@
 	<tbody>
 		<% @patients.each do |patient| %>
 			<tr>
+                <td><%= patient.id %></td>
 				<td><%= patient.firstname %></td>
 				<td><%= patient.middlename %></td>
 				<td><%= patient.lastname %></td>
 				<td><%= patient.address %></td>
 				<td><%= patient.birth_date.strftime("%d/%m/%Y") %></td>
+<<<<<<< HEAD
 				<td><%= link_to 'Mostrar' ,patient %>
+=======
+                <td><%= link_to 'Mostrar Paciente', patient %></td>
+>>>>>>> upstream/master
 				<td><%= link_to 'Eliminar Paciente', patient, method: :delete, data: { confirm: 'Esta Seguro de eliminar el paciente?' } %></td>
 			</tr>
 		<% end %>
