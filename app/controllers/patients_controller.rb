@@ -4,11 +4,12 @@ class PatientsController < ApplicationController
 	end
 
 	def show
-		@patients = Patient.find(params[:id])
+		@patient = Patient.find(params[:id])
 	end
 
 	def new
-		@patients = Patient.new
+		@patient = Patient.new
+		@diagnosis=Diagnosis.all
 	end
 
 	def create
@@ -19,17 +20,27 @@ class PatientsController < ApplicationController
                     render :new
                 end
     end
-    
+		def edit
+     @patient = Patient.find(params[:id])
+		end
+
+		def update
+
+			@patient=Patient.find(params[:id]).update(patient_params)
+				  flash[:success] = "Diagnóstico Eliminado."
+					redirect_to patients_url
+			end
+
     def destroy
         @patients = Diagnosis.find(params[:id]).destroy
         flash[:success] = "Diagnóstico Eliminado."
         redirect_to @patients
     end
-        
+
         private
-        
+
     def patient_params
         params.require(:patient).permit(:firstname, :middlename, :lastname, :address, :birth_date)
     end
-    
+
 end

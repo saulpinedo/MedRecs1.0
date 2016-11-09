@@ -11,13 +11,13 @@
             <th>Diagnóstico Clínico</th>
             <th>Descripcion</th>
         </tr>
-    </thead> 
+    </thead>
     <tbody>
-        <% @diagnoses.each do |diagnosis| %>
+        <% @diagnosis.each do |diagnosis| %>
             <tr>
                 <td><%= diagnosis.diagnosis %></td>
                 <td><%= diagnosis.description%></td>
-                <td><%= link_to 'Eliminar Diagnostico', diagnosis, method: :delete, data: { confirm: 'Esta Seguro de eliminar el Diagnóstico? Perdera la información previamente ingresada.' } %></td>
+                <td><%= link_to 'Eliminar Diagnostico', diagnoses, method: :delete, data: { confirm: 'Esta Seguro de eliminar el Diagnóstico? Perdera la información previamente ingresada.' } %></td>
             </tr>
         <% end %>
     </tbody>

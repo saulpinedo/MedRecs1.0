@@ -1,32 +1,32 @@
 <h1> Datos del paciente </h1>
         <p>
             <strong># Paciente </strong>
-            <%= @patients.id %>
+            <%= @patient.id %>
         </p>
 
         <p>
             <strong>Primer Nombre</strong>
-            <%= @patients.firstname %>
+            <%= @patient.firstname %>
         </p>
 
         <p>
             <strong>Segundo Nombre</strong>
-            <%= @patients.middlename %>
+            <%= @patient.middlename %>
         </p>
 
         <p>
             <strong>Apellidos</strong>
-            <%= @patients.lastname %>
+            <%= @patient.lastname %>      
         </p>
 
         <p>
             <strong>Direccion</strong>
-            <%= @patients.address %>
+            <%= @patient.address %>
         </p>
 
         <p>
             <strong>Fecha de Nacimiento</strong>
-            <%= @patients.birth_date.strftime("%d/%m/%Y") %>
+            <%= @patient.birth_date.strftime("%d/%m/%Y") %>
         </p>
 
         <%= link_to 'Volver a Pacientes', patients_path %>

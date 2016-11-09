@@ -4,6 +4,6 @@ Rails.application.routes.draw do
     resources :diagnoses
     resources :doctors
     resources :static_pages
-    
+
     root 'static_pages#index'
 end

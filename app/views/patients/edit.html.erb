@@ -24,11 +24,6 @@
         <strong>Fecha de nacimiento</strong><br/>
         <%= f.date_select :birth_date, {order: [:day,:month,:year], start_year: 1900} %>
     </p>
-    <p>
-        <strong>diagnostico</strong><br/>
-        <%= f.collection_select :id,@diagnosis,:id,:diagnosis,include_blank: true %>
-    </p>
-
 
     <%= f.submit "Agregar Paciente" %>
 
